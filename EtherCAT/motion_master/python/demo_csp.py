@@ -77,7 +77,7 @@ def do_every(period, function, *args):
             break
         
 
-def main_loop(od, sc):
+def main_loop():
     """Main loop function"""
     #print(time.time())
     # Here we enable the drive with deeper codes, to avoid a sudden jump after finding index in case an incremental encoder is used for commutation
@@ -135,14 +135,14 @@ if __name__ == '__main__':
         sc.fault_reset()
 
     # Execute main_loop function with the desired frequency
-    do_every(master_period, main_loop, od, sc)
+    do_every(master_period, main_loop)
 
     # Alternative way for executing the main loop function periodically
     '''
     while(1):
         t = time.time()
         try:
-            main_loop(od, sc)
+            main_loop()
             t += master_period
             time.sleep(max(t - time.time(),0))
 
