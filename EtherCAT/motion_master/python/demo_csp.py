@@ -91,6 +91,7 @@ def main_loop(od, sc):
     # Send the target position
     od.target_position(slave_1_data_write['target_position'])
 
+
 if __name__ == '__main__':
     # Configure the logger
     logging.basicConfig(format="[%(levelname).4s] %(message)s",
