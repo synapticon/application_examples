@@ -26,7 +26,8 @@ boolean inOP;
 uint8 currentgroup = 0;
 
 /* define pointer structure */
-typedef struct PACKED
+#pragma pack(1)
+typedef struct
 {
   int16 Statusword;
   int8  OpModeDisplay;
@@ -51,7 +52,7 @@ typedef struct PACKED
   int16 TorqueDemand;
 } in_somanet_42t;
 
-typedef struct PACKED
+typedef struct
 {
   int16 Controlword;
   int8  OpMode;
@@ -67,7 +68,7 @@ typedef struct PACKED
   int32 UserMOSI;
   int32 VelocityOffset;
 } out_somanet_42t;
-
+#pragma pack()
 
 void simpletest(char *ifname)
 {
